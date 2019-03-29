@@ -1,0 +1,15 @@
+[user]
+	name = ankitjain28may
+	email = ankitjain28may77@gmail.com
+	signingkey = 916C5A164FE8EBF7
+[credential]
+[color]
+	status = auto
+	ui = true
+	branch = auto
+	interactive = auto
+	diff = auto
+[credential]
+	
+[credential]
+	helper = cache
