@@ -1,0 +1,14 @@
+{
+  "path_mapping": {
+    "/var/www/html/" : "/var/www/html/"
+  },
+  "url": "http://localhost/drupal/",
+  "max_data": 4096,
+  "super_globals": false,
+  "close_on_stop": false,
+  "max_depth": 10,
+  "max_children": 64,
+  "port": 9001,
+  "ide_key": "sublime.xdebug",
+  "debug": true
+}

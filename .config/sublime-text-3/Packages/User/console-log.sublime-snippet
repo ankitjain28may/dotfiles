@@ -1,0 +1,10 @@
+<snippet>
+  <content>
+    <![CDATA[console.log('${1}',$1);]]>
+  </content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>cl</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
+
+
