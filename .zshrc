@@ -80,6 +80,7 @@ plugins=(
   kubectl
   docker-compose
   kube-ps1
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,12 +117,33 @@ PROMPT=$PROMPT'$(kube_ps1) '
 DEFAULT_USER="$(whoami)"
 
 # Dir: current working directory
-prompt_dir() {
-  dir=$(print -P %~)
-  parentdir="$(dirname "$dir")"
-  if [[ $parentdir == '~' || $parentdir == '.' ||  $parentdir == '/' ]] then
-    prompt_segment blue $CURRENT_FG '%2~'
-  else
-    prompt_segment blue $CURRENT_FG '../%1~'
-  fi
+#prompt_dir() {
+#  dir=$(print -P %~)
+#  parentdir="$(dirname "$dir")"
+#  if [[ $parentdir == '~' || $parentdir == '.' ||  $parentdir == '/' ]] then
+#    prompt_segment blue $CURRENT_FG '%2~'
+#  else
+#    prompt_segment blue $CURRENT_FG '../%1~'
+#  fi
+#}
+
+# added by travis gem
+[ -f /Users/ankitjain/.travis/travis.sh ] && source /Users/ankitjain/.travis/travis.sh
+
+# The Fuck
+eval $(thefuck --alias)
+
+# Adding path for larahost
+export NGINX_DEST="/usr/local/etc/nginx/servers/"
+export NGINX_EXAMPLE_FILE="/usr/local/etc/nginx/servers/example.conf"
+export AWS_PROFILE="default"
+export PATH="/usr/local/sbin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:$PATH"
+
+# Alias for my work
+alias workspace="cd ~/Project/workspace"
+alias kontext="kubectl config use-context"
+
+# Setting namespace
+kns() {
+kubectl config set-context $(kubectl config current-context) --namespace=$1
 }
