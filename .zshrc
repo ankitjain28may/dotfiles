@@ -10,6 +10,7 @@ export ZSH="/Users/ankitjain/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="agnoster"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -81,6 +82,8 @@ plugins=(
   docker-compose
   kube-ps1
   docker
+  terraform
+  timer
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -127,6 +130,11 @@ DEFAULT_USER="$(whoami)"
 #  fi
 #}
 
+# Dir: current working directory
+prompt_dir() {
+  prompt_segment 39d $CURRENT_FG '%~'
+}
+
 # added by travis gem
 [ -f /Users/ankitjain/.travis/travis.sh ] && source /Users/ankitjain/.travis/travis.sh
 
@@ -139,11 +147,34 @@ export NGINX_EXAMPLE_FILE="/usr/local/etc/nginx/servers/example.conf"
 export AWS_PROFILE="default"
 export PATH="/usr/local/sbin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:$PATH"
 
-# Alias for my work
-alias workspace="cd ~/Project/workspace"
+# Alias for my office work
+alias workspace="cd ~/project/workspace"
+alias project="cd ~/project"
+alias jump="ssh jump"
+alias vishnu="cd ~/project/workspace/vishnu"
+alias kalki="cd ~/project/workspace/kalki"
 alias kontext="kubectl config use-context"
+alias tf="terraform"
 
 # Setting namespace
 kns() {
 kubectl config set-context $(kubectl config current-context) --namespace=$1
 }
+
+clone() {
+git clone $1
+}
+
+# Terraform
+prompt_terraform() {
+  local tf=$(tf_prompt_info | awk '{print substr($0,2,length($0)-2)}')
+  if [[ -n $tf  ]]; then 
+    prompt_segment blue black "TF: $(tf_prompt_info | awk '{print substr($0,2,length($0)-2)}') " 
+  fi
+}
+PROMPT='$(prompt_terraform)'$PROMPT
+
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+RPROMPT="%{$fg[cyan]%}[%D{%f/%m/%y}|%@]"
+
+TIMER_FORMAT="$fg[red]/%d"
