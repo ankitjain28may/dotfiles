@@ -145,16 +145,26 @@ eval $(thefuck --alias)
 export NGINX_DEST="/usr/local/etc/nginx/servers/"
 export NGINX_EXAMPLE_FILE="/usr/local/etc/nginx/servers/example.conf"
 export AWS_PROFILE="default"
-export PATH="/usr/local/sbin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:$PATH"
+export PATH="/usr/local/sbin:/Users/ankitjain/Library/Python/3.7/bin:/usr/local/opt/mysql-client/bin:/usr/local/opt/ruby/bin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GOPATH=/Users/ankitjain/go
+# GO issues https://github.com/golang/go/issues/36900
+export CGO_CFLAGS=-mmacosx-version-min=10.11 
+# Required by ruby gems
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+export LDFLAGS="-L/usr/local/opt/ruby/lib"
+export CPPFLAGS="-I/usr/local/opt/ruby/include"
+export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
 
 # Alias for my office work
 alias workspace="cd ~/project/workspace"
 alias project="cd ~/project"
 alias jump="ssh jump"
 alias vishnu="cd ~/project/workspace/vishnu"
-alias kalki="cd ~/project/workspace/kalki"
 alias kontext="kubectl config use-context"
 alias tf="terraform"
+alias curlstatus='curl -sL -w "%{http_code} %{url_effective}\\n" -o /dev/null'
+alias keti='kubectl exec -ti'
+alias kpf='kubectl port-forward'
 
 # Setting namespace
 kns() {
@@ -172,9 +182,33 @@ prompt_terraform() {
     prompt_segment blue black "TF: $(tf_prompt_info | awk '{print substr($0,2,length($0)-2)}') " 
   fi
 }
+
+#AWS Profile:
+# - display current AWS_PROFILE name
+# - displays yellow on red if profile name contains 'production' or
+#   ends in '-prod'
+# - displays black on green otherwise
+prompt_aws() {
+  [[ -z "$AWS_PROFILE" ]] && return
+  if [[ -z "$AWS_VAULT" ]];
+  then
+    case "$AWS_PROFILE" in
+      *-prod|*production*) prompt_segment red yellow  "AWS: $AWS_PROFILE" ;;
+      *) prompt_segment green black "AWS: $AWS_PROFILE" ;;
+    esac
+  else
+    case "$AWS_VAULT" in
+      *-prod|*production*) prompt_segment red yellow  "AWS: $AWS_VAULT" ;;
+      *) prompt_segment green black "AWS: $AWS_VAULT" ;;
+    esac
+  fi
+}
+
 PROMPT='$(prompt_terraform)'$PROMPT
 
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 RPROMPT="%{$fg[cyan]%}[%D{%f/%m/%y}|%@]"
 
 TIMER_FORMAT="$fg[red]/%d"
+
+export PATH="$HOME/.tgenv/bin:$PATH"

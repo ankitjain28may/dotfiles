@@ -1,7 +1,6 @@
 [user]
 	name = ankitjain28may
 	email = ankitjain28may77@gmail.com
-	signingkey = 916C5A164FE8EBF7
 [credential]
 [color]
 	status = auto
@@ -13,3 +12,8 @@
 	
 [credential]
 	helper = cache
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[core]
+	excludesfile = /Users/ankitjain/.gitignore
