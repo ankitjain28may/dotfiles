@@ -154,6 +154,7 @@ export CGO_CFLAGS=-mmacosx-version-min=10.11
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
 export CPPFLAGS="-I/usr/local/opt/ruby/include"
 export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+export GIT_TOKEN=""
 
 # Alias for my office work
 alias workspace="cd ~/project/workspace"
@@ -212,3 +213,5 @@ RPROMPT="%{$fg[cyan]%}[%D{%f/%m/%y}|%@]"
 TIMER_FORMAT="$fg[red]/%d"
 
 export PATH="$HOME/.tgenv/bin:$PATH"
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

@@ -1,0 +1,126 @@
+{
+    "workbench.colorTheme": "One Dark Pro",
+    "vs-kubernetes": {
+        "vs-kubernetes.helm-path": "/Users/ankitjain/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+        "vs-kubernetes.kubectl-path": "/Users/ankitjain/.vs-kubernetes/tools/kubectl/kubectl",
+        "vs-kubernetes.minikube-path": "/Users/ankitjain/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "files.exclude": {
+        ".terraform/**/*": true,
+        "**/.terraform/**/*": true,
+        "Untitled*": true,
+    },
+    "files.watcherExclude": {
+        "**/.terraform/**": true,
+        "**/.terraform/**/*": true,
+        "Untitled*": true,
+    },
+    "search.exclude": {
+        "**/.terraform": true,
+        "**/.terraform/**/*": true,
+    },
+    "search.useGlobalIgnoreFiles": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "phpcs.executablePath": "",
+    "phpcs.enable": false,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "material-icon-theme.folders.theme": "classic",
+     // Custom tags for the parser to use
+     "yaml.customTags": [
+        "!And scalar",
+        "!And mapping",
+        "!And sequence",                
+        "!If scalar",
+        "!If mapping",
+        "!If sequence",                
+        "!Not scalar",
+        "!Not mapping",
+        "!Not sequence",                
+        "!Equals scalar",
+        "!Equals mapping",
+        "!Equals sequence",                
+        "!Or scalar",
+        "!Or mapping",
+        "!Or sequence",                
+        "!FindInMap scalar",
+        "!FindInMap mappping",        
+        "!FindInMap sequence",
+        "!Base64 scalar",
+        "!Base64 mapping",
+        "!Base64 sequence",                
+        "!Cidr scalar",
+        "!Cidr mapping",
+        "!Cidr sequence",                
+        "!Ref scalar",
+        "!Ref mapping",
+        "!Ref sequence",                
+        "!Sub scalar",
+        "!Sub mapping",
+        "!Sub sequence",                
+        "!GetAtt scalar",
+        "!GetAtt mapping",
+        "!GetAtt sequence",                
+        "!GetAZs scalar",
+        "!GetAZs mapping",
+        "!GetAZs sequence",                
+        "!ImportValue scalar",
+        "!ImportValue mapping",
+        "!ImportValue sequence",                
+        "!Select scalar",
+        "!Select mapping",
+        "!Select sequence",
+        "!Split scalar",
+        "!Split mapping",
+        "!Split sequence",                
+        "!Join scalar",
+        "!Join mapping",
+        "!Join sequence"                
+    ],
+    // Enable/disable default YAML formatter (requires restart)
+    "yaml.format.enable": true,
+    "workbench.colorCustomizations": {
+    
+    },
+    "launch": {
+    
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.associations": {
+        "*.tf": "tf"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
+    "terminal.integrated.allowMnemonics": true,
+    "terminal.integrated.fontWeight": null,
+    "mssql.connections": [
+        {
+            "server": "{{put-server-name-here}}",
+            "database": "{{put-database-name-here}}",
+            "user": "{{put-username-here}}",
+            "password": ""
+        }
+    ],
+    "terminal.integrated.localEchoStyle": null,
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.profiles.osx": {
+        "/bin/sh (migrated)": {
+            "path": "/bin/sh",
+            "args": [
+                "-l"
+            ]
+        }
+    },
+}
