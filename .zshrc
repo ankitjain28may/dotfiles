@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ankitjain/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -136,7 +136,7 @@ prompt_dir() {
 }
 
 # added by travis gem
-[ -f /Users/ankitjain/.travis/travis.sh ] && source /Users/ankitjain/.travis/travis.sh
+[ -f "$HOME/.travis/travis.sh" ] && source "$HOME/.travis/travis.sh"
 
 # The Fuck
 eval $(thefuck --alias)
@@ -145,8 +145,8 @@ eval $(thefuck --alias)
 export NGINX_DEST="/usr/local/etc/nginx/servers/"
 export NGINX_EXAMPLE_FILE="/usr/local/etc/nginx/servers/example.conf"
 export AWS_PROFILE="default"
-export PATH="/usr/local/sbin:/Users/ankitjain/Library/Python/3.7/bin:/usr/local/opt/mysql-client/bin:/usr/local/opt/ruby/bin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export GOPATH=/Users/ankitjain/go
+export PATH="/usr/local/sbin:$HOME/Library/Python/3.7/bin:/usr/local/opt/mysql-client/bin:/usr/local/opt/ruby/bin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export GOPATH="$HOME/go"
 # GO issues https://github.com/golang/go/issues/36900
 export CGO_CFLAGS=-mmacosx-version-min=10.11 
 # Required by ruby gems
