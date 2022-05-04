@@ -1,9 +1,12 @@
 {
     "workbench.colorTheme": "One Dark Pro",
     "vs-kubernetes": {
-        "vs-kubernetes.helm-path": "/Users/ankitjain/.vs-kubernetes/tools/helm/darwin-amd64/helm",
-        "vs-kubernetes.kubectl-path": "/Users/ankitjain/.vs-kubernetes/tools/kubectl/kubectl",
-        "vs-kubernetes.minikube-path": "/Users/ankitjain/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+        "vs-kubernetes.helm-path": "/Users/ankit.jain/.vs-kubernetes/tools/helm/darwin-amd64/helm",
+        "vs-kubernetes.kubectl-path": "/Users/ankit.jain/.vs-kubernetes/tools/kubectl/kubectl",
+        "vs-kubernetes.minikube-path": "/Users/ankit.jain/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vscode-kubernetes.helm-path.mac": "/Users/ankit.jain/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+        "vscode-kubernetes.minikube-path.mac": "/Users/ankit.jain/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+        "vscode-kubernetes.kubectl-path.mac": "/Users/ankit.jain/.vs-kubernetes/tools/kubectl/kubectl"
     },
     "workbench.iconTheme": "material-icon-theme",
     "terminal.external.osxExec": "iTerm.app",
@@ -123,4 +126,6 @@
             ]
         }
     },
+    "redhat.telemetry.enabled": false,
+    "http.proxyAuthorization": null,
 }

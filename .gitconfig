@@ -1,19 +1,6 @@
-[user]
-	name = ankitjain28may
-	email = ankitjain28may77@gmail.com
-[credential]
-[color]
-	status = auto
-	ui = true
-	branch = auto
-	interactive = auto
-	diff = auto
-[credential]
-	
-[credential]
-	helper = cache
-
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-[core]
-	excludesfile = /Users/ankitjain/.gitignore
+[include]
+    path = ~/.personal.gitconfig
+[includeIf "gitdir:~/project/workspace/"]
+    path = ~/.work.gitconfig
+[hub]
+        host = git-work.com

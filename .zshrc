@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/sbin:/opt/homebrew/bin:$PATH"
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 PROMPT=$PROMPT'$(kube_ps1) '
@@ -145,7 +145,7 @@ eval $(thefuck --alias)
 export NGINX_DEST="/usr/local/etc/nginx/servers/"
 export NGINX_EXAMPLE_FILE="/usr/local/etc/nginx/servers/example.conf"
 export AWS_PROFILE="default"
-export PATH="/usr/local/sbin:$HOME/Library/Python/3.7/bin:/usr/local/opt/mysql-client/bin:/usr/local/opt/ruby/bin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/usr/local/sbin:$HOME/bin:$HOME/Library/Python/3.7/bin:/usr/local/opt/mysql-client/bin:/usr/local/opt/ruby/bin:$NGINX_DEST:$NGINX_EXAMPLE_FILE:$AWS_PROFILE:${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export GOPATH="$HOME/go"
 # GO issues https://github.com/golang/go/issues/36900
 export CGO_CFLAGS=-mmacosx-version-min=10.11 
@@ -215,3 +215,4 @@ TIMER_FORMAT="$fg[red]/%d"
 export PATH="$HOME/.tgenv/bin:$PATH"
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
